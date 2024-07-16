@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CategoryWrapper from './components/CategoryWrapper';
+import RecipeCard from "./components/RecipeCard";
 
 function Home() {
 
@@ -30,11 +31,13 @@ function Home() {
     <>
     <div className="max-w-screen-2xl mx-auto">
       <Header />
+      <p className="text-center text-red-500">{error ? error : ""}</p>
       <div className='container mx-auto'>
         <div className='flex flex-col justify-center items-center w-full py-20'>
         <Hero />
         <CategoryWrapper />
         </div>
+        <RecipeCard recettes={listRecettes} />
       </div>
     </div>
     </>
