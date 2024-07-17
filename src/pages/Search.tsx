@@ -58,7 +58,7 @@ const Search = () => {
     }, [query]);
 
     return (
-        <>
+        <div className="mx-auto max-w-screen-2xl">
         <Header />
         <div className="px-6 py-20 lg:px-12">
             <h1 className="py-10 text-3xl font-semibold text-center capitalize text-secondary sm:text-6xl sm:leading-relaxed">Recherche</h1>
@@ -85,7 +85,7 @@ const Search = () => {
                 ))}
             </ul>
         </div>
-        </>
+        </div>
     );
 };
 
