@@ -20,7 +20,9 @@ interface Recettes {
 const RecipeCard = ({ recettes }: Recettes) => {
     return (
         recettes.map((recette: Card) => (
-            <div className="recette" key={recette.id}></div>
+            <div className="recette" key={recette.id}>
+                <p>{recette.name}</p>
+            </div>
         ))
     )
 }

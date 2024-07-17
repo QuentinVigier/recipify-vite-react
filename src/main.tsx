@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './Home.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import CategoryPage from './pages/CategoryPage.tsx';
+import Search from './pages/Search.tsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     path: "/recette/:id",
     element: <div>Contact</div>,
   },
+  {
+    path: "/search",
+    element: <Search />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
