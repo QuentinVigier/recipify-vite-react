@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import CategoryWrapper from "../components/CategoryWrapper";
 import { useEffect, useState } from "react";
+import RecipeCardCategory from "../components/RecipeCardCategory";
 
 interface Recipe {
   id: string;
@@ -64,9 +65,10 @@ const CategoryPage = () => {
         <CategoryWrapper />
       </div>
       {error && <p className="text-red-500">{error}</p>}
-      <ul>
+      
+      <ul className="grid grid-cols-1 gap-8 mt-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {results && results.map((item) => (
-          <li key={item.id}>{item.name}</li>
+          <RecipeCardCategory item={item} key={item.id} />
         ))}
       </ul>
     </div>
