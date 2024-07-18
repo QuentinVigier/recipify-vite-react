@@ -5,6 +5,7 @@ import Home from './Home.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import CategoryPage from './pages/CategoryPage.tsx';
 import Search from './pages/Search.tsx';
+import Recettes from './pages/Recettes.tsx';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/recettes",
-    element: <div>Skills</div>,
+    element: <Recettes />,
   },
   {
     path: "/recette/:id",

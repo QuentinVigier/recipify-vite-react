@@ -1,7 +1,6 @@
 import { GoClock } from "react-icons/go";
 import { NavLink } from "react-router-dom";
 
-
 interface Recipe {
     id: string;
     name: string;
@@ -25,7 +24,9 @@ const RecipeCardCategory = ({ item }: RecipeProps) => {
         <div className="container flex justify-center mx-auto md:justify-start">
             <div className="max-w-sm">
                 <div className="relative transition duration-500 bg-white rounded-lg shadow-lg hover:shadow-xl">
-                    <img src={item.img} alt={item.name} className="rounded-t-lg" />
+                    <div className="w-64 h-48 overflow-hidden rounded-t-lg">
+                        <img src={item.img} alt={item.name} className="object-cover w-full h-full" />
+                    </div>
                     <div className="px-5 py-6 bg-white rounded-lg">
                         <NavLink to={`/recette/${item.id}`}>
                         <h1 className="mb-8 text-2xl font-bold text-gray-700 hover:text-gray-900 hover:cursor-pointer">{item.name}</h1>
@@ -49,4 +50,4 @@ const RecipeCardCategory = ({ item }: RecipeProps) => {
     )
 }
 
-export default RecipeCardCategory
+export default RecipeCardCategory;
