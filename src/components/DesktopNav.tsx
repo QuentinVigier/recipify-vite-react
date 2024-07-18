@@ -6,9 +6,11 @@ interface DesktopNavProps {
 
 const DesktopNav = ({ menuItems }: DesktopNavProps) => {
     return (
-        <div className="h-16 flex justify-between items-center px-6 lg:px-12">
+        <div className="flex items-center justify-between h-16 px-6 lg:px-12">
 
-            <NavLink to="/">Recipify</NavLink>
+            <NavLink to="/">
+            <img src="/logo.jpg" alt="logo" className="w-20 h-20" />
+            </NavLink>
             <ul className="flex gap-7">
                 {menuItems.map((item: string, index: number) => (
                     <li key={index}>
@@ -19,10 +21,10 @@ const DesktopNav = ({ menuItems }: DesktopNavProps) => {
 
             <ul className="flex items-center gap-4 font-medium">
                 <li>
-                    <button className="text-secondary px-4 py-2 rounded border border-secondary">Login</button>
+                    <button className="px-4 py-2 border rounded text-secondary border-secondary">Login</button>
                 </li>
                 <li>
-                    <button className="text-secondary px-4 py-2 rounded border border-secondary">Sign up</button>
+                    <button className="px-4 py-2 border rounded text-secondary border-secondary">Sign up</button>
                 </li>
             </ul>
         </div>

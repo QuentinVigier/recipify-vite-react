@@ -5,7 +5,9 @@ import CategoryWrapper from './components/CategoryWrapper';
 import RecipeCard from "./components/RecipeCard";
 import { NavLink } from "react-router-dom";
 import FeaturedSection from "./components/FeaturedSection";
-import LatestRecipes from "./components/LatestRecipes";
+import NewsLetter from "./components/NewsLetter";
+import CompanyLogo from "./components/CompanyLogo";
+import Footer from "./components/Footer";
 
 function Home() {
   const [listRecettes, setListRecettes] = useState([]);
@@ -41,16 +43,20 @@ function Home() {
             <Hero />
             <CategoryWrapper />
           </div>
+          <FeaturedSection />
           <ul className="grid grid-cols-2 mt-20 gap-7 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <RecipeCard recettes={listRecettes} />
           </ul>
           <div className="flex justify-center py-5">
             <NavLink to="/recettes">
-            <button className="px-6 py-2 text-center uppercase bg-orange-300 rounded-2xl">Voir plus de recettes</button>
+            <button className="w-full px-8 py-4 text-base font-semibold text-center transition duration-200 ease-in border border-[#9c702a] hover:bg-btnColor text-secondary hover:text-white rounde-lg focus:outline-none">Voir plus de recettes</button>
             </NavLink>
           </div>
-          <FeaturedSection />
-          <LatestRecipes />
+          <NewsLetter />
+          <CompanyLogo />
+        </div>
+        <div className="flex items-center justify-center">
+          <Footer />
         </div>
       </div>
     </>

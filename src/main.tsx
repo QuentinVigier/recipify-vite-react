@@ -6,6 +6,7 @@ import ErrorPage from './pages/ErrorPage.tsx';
 import CategoryPage from './pages/CategoryPage.tsx';
 import Search from './pages/Search.tsx';
 import Recettes from './pages/Recettes.tsx';
+import RecipeDetails from './pages/RecipeDetails.tsx';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/recette/:id",
-    element: <div>Contact</div>,
+    element: <RecipeDetails />,
   },
   {
     path: "/search",

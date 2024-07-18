@@ -11,9 +11,11 @@ interface MobileNavProps {
 
 const MobileNav = ({ menuItems, onClose, onOpen, hideLeft }: MobileNavProps) => {
     return (
-        <div className="h-16 flex justify-between items-center px-6 lg:px-12">
-            <NavLink to="/">Recipify</NavLink>
-            <button className="border border-primary rounded" onClick={onOpen}>
+        <div className="flex items-center justify-between h-16 px-6 lg:px-12">
+            <NavLink to="/">
+            <img src="/logo.jpg" alt="logo" className="w-20 h-20" />
+            </NavLink>
+            <button className="border rounded border-primary" onClick={onOpen}>
                 <HiBars3BottomRight className="w-7 h-7" />
             </button>
 
@@ -32,12 +34,12 @@ const MobileNav = ({ menuItems, onClose, onOpen, hideLeft }: MobileNavProps) => 
                             ))}
                     </ul>
 
-                    <ul className="flex items-center gap-4 font-medium mt-10">
+                    <ul className="flex items-center gap-4 mt-10 font-medium">
                         <li>
-                            <button className="text-secondary px-4 py-2 rounded border-2 border-secondary">Login</button>
+                            <button className="px-4 py-2 border-2 rounded text-secondary border-secondary">Login</button>
                         </li>
                         <li>
-                            <button className="text-secondary px-4 py-2 rounded border-2 border-secondary">Sign up</button>
+                            <button className="px-4 py-2 border-2 rounded text-secondary border-secondary">Sign up</button>
                         </li>
                     </ul>
                 </div>

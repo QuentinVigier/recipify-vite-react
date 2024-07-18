@@ -11,7 +11,7 @@ interface Recipe {
     difficulté: string,
     type: string,
     région: string,
-    ingrédients: string,
+    ingrédients: [{ nom: string, quantité: string }],
     instructions: string,
     portions: string,
     conseils: string,
