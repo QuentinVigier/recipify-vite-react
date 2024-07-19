@@ -5,7 +5,7 @@ const FeaturedSection = () => {
   return (
     <div className="flex flex-col items-center justify-between gap-12 px-5 my-4 overflow-hidden md:flex-row sm:my-20 md:gap-20 lg:px-10">
         <div className="relative">
-            <div className="absolute top-4 left6( bg-white text-secondary px-3 py-1 rounded-md uppercase trackind-wider">Featured Recipe</div>
+            <div className="absolute top-4 left6( bg-white text-secondary px-3 py-1 rounded-md uppercase trackind-wider">Recette de la semaine</div>
             <img src={FeaturedImg} alt="Featured Image"></img>
         </div>
 

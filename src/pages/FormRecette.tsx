@@ -133,7 +133,7 @@ const RecipeForm: React.FC = () => {
                     </div>
                     <div className="flex-1 p-8 mx-12">
                         <label className="block mb-4">
-                            Nom:
+                            Nom :
                             <input
                                 className="w-full p-2 mt-1 border rounded"
                                 placeholder="Nom de la recette"
@@ -147,7 +147,7 @@ const RecipeForm: React.FC = () => {
                             )}
                         </label>
                         <label className="block mb-4">
-                            Image URL:
+                            Image URL :
                             <input
                                 className="w-full p-2 mt-1 border rounded"
                                 placeholder="https://images.unsplash.com/photo"
@@ -159,7 +159,7 @@ const RecipeForm: React.FC = () => {
                             {errors.img && <span className="text-red-500">{errors.img}</span>}
                         </label>
                         <label className="block mb-4">
-                            Temps de préparation:
+                            Temps de préparation :
                             <input
                                 className="w-full p-2 mt-1 border rounded"
                                 placeholder="1h"
@@ -173,7 +173,7 @@ const RecipeForm: React.FC = () => {
                             )}
                         </label>
                         <label className="block mb-4">
-                            Difficulté:
+                            Difficulté :
                             <input
                                 className="w-full p-2 mt-1 border rounded"
                                 placeholder="Facile - Moyen - Difficile"
@@ -187,7 +187,7 @@ const RecipeForm: React.FC = () => {
                             )}
                         </label>
                         <label className="block mb-4">
-                            Type:
+                            Type :
                             <input
                                 className="w-full p-2 mt-1 border rounded"
                                 placeholder="Entrée, Plat, Dessert, Accompagnement, Boisson"
@@ -201,7 +201,7 @@ const RecipeForm: React.FC = () => {
                             )}
                         </label>
                         <label className="block mb-4">
-                            Région:
+                            Pays :
                             <input
                                 className="w-full p-2 mt-1 border rounded"
                                 placeholder="Japon - Corée - Italie - France..."
@@ -215,11 +215,11 @@ const RecipeForm: React.FC = () => {
                             )}
                         </label>
                         {recipe.ingrédients.map((ingredient, index) => (
-                            <div key={index} className="mb-4">
+                            <div key={index} className="flex flex-row w-full">
                                 <label className="block">
-                                    Ingrédient Nom:
+                                    Ingrédient Nom :
                                     <input
-                                        className="w-full p-2 mt-1 border rounded"
+                                        className="w-1/2 p-2 mt-1 border rounded"
                                         placeholder="Parmesan"
                                         type="text"
                                         name="nom"
@@ -228,9 +228,9 @@ const RecipeForm: React.FC = () => {
                                     />
                                 </label>
                                 <label className="block">
-                                    Quantité:
+                                    Quantité :
                                     <input
-                                        className="w-full p-2 mt-1 border rounded"
+                                        className="w-1/2 p-2 mt-1 border rounded"
                                         placeholder="50 grammes"
                                         type="text"
                                         name="quantité"
@@ -246,12 +246,12 @@ const RecipeForm: React.FC = () => {
                         <button
                             type="button"
                             onClick={addIngredient}
-                            className="px-4 py-4 mb-4 text-base font-semibold text-center transition duration-200 ease-in border hover:border-[#9c702a] bg-btnColor hover:text-secondary hover:bg-amber-400 text-white rounde-lg focus:outline-none"
+                            className="px-4 py-4 mb-4 my-4 text-base font-semibold text-center transition duration-200 ease-in border hover:border-[#9c702a] bg-btnColor hover:text-secondary hover:bg-amber-400 text-white rounde-lg focus:outline-none"
                         >
                             Ajouter un ingrédient
                         </button>
                         <label className="block mb-4">
-                            Instructions:
+                            Instructions :
                             <textarea
                                 className="w-full p-2 mt-1 border rounded"
                                 placeholder="1. Préchauffer le four à 200°C pour 10 minutes.
@@ -265,7 +265,7 @@ const RecipeForm: React.FC = () => {
                             )}
                         </label>
                         <label className="block mb-4">
-                            Portions:
+                            Portions :
                             <input
                                 className="w-full p-2 mt-1 border rounded"
                                 placeholder="Pour 10 personnes"
@@ -279,7 +279,7 @@ const RecipeForm: React.FC = () => {
                             )}
                         </label>
                         <label className="block mb-4">
-                            Conseils:
+                            Conseils :
                             <textarea
                                 className="w-full p-2 mt-1 border rounded"
                                 placeholder="Servir avec un fromage de chèvre ou un fromage de chèvre grillé"

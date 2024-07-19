@@ -44,9 +44,12 @@ function Home() {
             <CategoryWrapper />
           </div>
           <FeaturedSection />
+          <section className="pt-8">
+          <h2 className="text-3xl font-semibold text-center text-secondary sm:text-5xl sm:leading-relaxed">Nos dernières recettes</h2>
           <ul className="grid grid-cols-2 mt-20 gap-7 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <RecipeCard recettes={listRecettes} />
           </ul>
+          </section>
           <div className="flex justify-center py-5">
             <NavLink to="/recettes">
             <button className="w-full px-8 py-4 text-base font-semibold text-center transition duration-200 ease-in border border-[#9c702a] hover:bg-btnColor text-secondary hover:text-white rounde-lg focus:outline-none">Voir plus de recettes</button>
