@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "../components/Header"
-import Hero from "../components/Hero"
 import RecipeCardCategory from "../components/RecipeCardCategory";
+import CategoryWrapper from "../components/CategoryWrapper";
 
 interface Recipe {
     id: string;
@@ -44,8 +44,9 @@ const Recettes = () => {
         <div className="mx-auto max-w-screen-2xl">
             <Header />
             <div className='flex flex-col items-center justify-center w-full py-20'>
-                <Hero />
+                <CategoryWrapper />
             </div>
+            <h1 className="py-10 text-3xl font-semibold text-center capitalize text-secondary sm:text-6xl sm:leading-relaxed">Toutes les recettes</h1>
             {error && <p className="text-red-500">{error}</p>}
             <ul className="grid grid-cols-2 gap-8 mt-20 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 {listRecettes && listRecettes.map((item: Recipe) => (

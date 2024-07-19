@@ -27,7 +27,6 @@ const RecipeDetails = () => {
             const data = await response.json();
             const filteredData = data.filter((item: Recipe) => item.id == id);
             setRecette(filteredData);
-            console.log(filteredData);
         } catch (error) {
             console.log(error);
         }
@@ -37,6 +36,7 @@ const RecipeDetails = () => {
         getOneRecippe();
     }, [getOneRecippe]);
 
+    console.log(recette[0]);
     // La chaîne de caractères contenant les instructions
     const instructions = "1. Laver et couper la laitue. 2. Ajouter les croûtons et le parmesan. 3. Mélanger avec la sauce César. 4. Ajouter le poulet grillé en tranches.";
 

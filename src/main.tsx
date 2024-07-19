@@ -7,6 +7,8 @@ import CategoryPage from './pages/CategoryPage.tsx';
 import Search from './pages/Search.tsx';
 import Recettes from './pages/Recettes.tsx';
 import RecipeDetails from './pages/RecipeDetails.tsx';
+import Articles from './pages/Articles.tsx';
+import FormRecette from './pages/FormRecette.tsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
   {
     path: "/search",
     element: <Search />,
+  },
+  {
+    path: "/articles",
+    element: <Articles />,
+  },
+  {
+    path: "/contribuer",
+    element: <FormRecette />,
   }
 ]);
 
