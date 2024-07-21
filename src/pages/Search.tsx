@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { useLocation } from "react-router-dom";
 import Header from "../components/Header";
+import RecipeCardCategory from "../components/RecipeCardCategory";
 
 interface Recipe {
     id: string,
@@ -59,32 +60,32 @@ const Search = () => {
 
     return (
         <div className="mx-auto max-w-screen-2xl">
-        <Header />
-        <div className="px-6 py-20 lg:px-12">
-            <h1 className="py-10 text-3xl font-semibold text-center capitalize text-secondary sm:text-6xl sm:leading-relaxed">Recherche</h1>
-            <div className="relative flex items-center p-4 mx-auto bg-white rounded md:max-w-3xl">
-                <IoSearchOutline className="w-5 h-5 mr-2 text-neutral-400" />
-                <input 
-                    className="outline-none w-full placeholder:text-[#1b2629]" 
-                    name="query" 
-                    type="search" 
-                    placeholder="Cherche une recette" 
-                    id="search" 
-                    required 
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                />
-            </div>
+            <Header />
+            <div className="px-6 py-20 lg:px-12">
+                <h1 className="py-10 text-3xl font-semibold text-center capitalize text-secondary sm:text-6xl sm:leading-relaxed">Recherche</h1>
+                <div className="relative flex items-center p-4 mx-auto bg-white rounded md:max-w-3xl">
+                    <IoSearchOutline className="w-5 h-5 mr-2 text-neutral-400" />
+                    <input
+                        className="outline-none w-full placeholder:text-[#1b2629]"
+                        name="query"
+                        type="search"
+                        placeholder="Cherche une recette"
+                        id="search"
+                        required
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                    />
+                </div>
 
-            {loading && <p>Chargement...</p>}
-            {error && <p>{error}</p>}
-            {!loading && results.length === 0 && <p>Aucune recette trouvée</p>}
-            <ul>
-                {results && results.map((item) => (
-                    <li key={item.id}>{item.name}</li>
-                ))}
-            </ul>
-        </div>
+                {loading && <p>Chargement...</p>}
+                {error && <p>{error}</p>}
+                {!loading && results.length === 0 && <p>Aucune recette trouvée</p>}
+                <ul className="grid grid-cols-1 gap-6 mt-20 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+                    {results && results.map((item) => (
+                        <RecipeCardCategory item={item} key={item.id} />
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 };
