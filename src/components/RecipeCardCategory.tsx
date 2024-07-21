@@ -1,4 +1,6 @@
 import { GoClock } from "react-icons/go";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 interface Recipe {
@@ -20,6 +22,29 @@ interface RecipeProps {
 }
 
 const RecipeCardCategory = ({ item }: RecipeProps) => {
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    useEffect(() => {
+        // Check if the item is already in localStorage
+        const storedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        setIsFavorite(storedFavorites.some((fav: Recipe) => fav.id === item.id));
+    }, [item.id]);
+
+    const handleFavoriteClick = () => {
+        let storedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        
+        if (isFavorite) {
+            // Remove from favorites
+            storedFavorites = storedFavorites.filter((fav: Recipe) => fav.id !== item.id);
+        } else {
+            // Add to favorites
+            storedFavorites.push(item);
+        }
+
+        localStorage.setItem('favorites', JSON.stringify(storedFavorites));
+        setIsFavorite(!isFavorite);
+    };
+
     return (
         <div className="container flex justify-center mx-auto md:justify-start">
             <div className="max-w-sm">
@@ -29,7 +54,7 @@ const RecipeCardCategory = ({ item }: RecipeProps) => {
                     </div>
                     <div className="px-5 py-6 bg-white rounded-lg">
                         <NavLink to={`/recette/${item.id}`}>
-                        <h1 className="mb-8 text-2xl font-bold text-gray-700 hover:text-gray-900 hover:cursor-pointer">{item.name}</h1>
+                            <h1 className="mb-8 text-2xl font-bold text-gray-700 hover:text-gray-900 hover:cursor-pointer">{item.name}</h1>
                         </NavLink>
                     </div>
 
@@ -44,10 +69,13 @@ const RecipeCardCategory = ({ item }: RecipeProps) => {
                     <div className="absolute px-4 py-2 bg-white rounded-lg top-2 right-2">
                         <span className="font-medium">{item.difficulté}</span>
                     </div>
+                    <div className="absolute cursor-pointer top-2 left-2" onClick={handleFavoriteClick}>
+                        {isFavorite ? <AiFillHeart className="text-red-500 w-7 h-7" /> : <AiOutlineHeart className="text-red-500 w-7 h-7" />}
+                    </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default RecipeCardCategory;

@@ -4,7 +4,7 @@ import MobileNav from './MobileNav';
 
 const Header = () => {
     const [hideLeft, setHideLeft] = useState("-left-[1000px]");
-    const menuItems = ["recettes", "articles","contribuer","contact"];
+    const menuItems = ["recettes", "articles","contribuer","favoris"];
 
     const onOpen = () => {
         setHideLeft("left-0");

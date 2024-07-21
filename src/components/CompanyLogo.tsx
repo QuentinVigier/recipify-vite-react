@@ -2,7 +2,7 @@
 
 const CompanyLogo = () => {
     return (
-        <div className="py-24 sm:py-32">
+        <div className="py-24 sm:pb-32">
             <div className="px-6 mx-auto max-w-7xl lg:px-8">
                 <h2 className="text-lg font-semibold leading-8 text-center text-gray-900">
                     Trusted by the world’s most innovative teams

@@ -39,7 +39,7 @@ const blogData = [
 
 const Articles = () => {
   return (
-    <>
+    <div className="mx-auto max-w-screen-2xl">
     <Header />
     <section className="px-6 py-20 lg:px-12">
     <h1 className="py-10 text-3xl font-semibold text-center capitalize text-secondary sm:text-6xl sm:leading-relaxed">Articles</h1>
@@ -74,7 +74,7 @@ const Articles = () => {
     </article>
     </section>
     <Footer />
-    </>
+    </div>
   )
 }
 

@@ -55,7 +55,9 @@ function Home() {
             <button className="w-full px-8 py-4 text-base font-semibold text-center transition duration-200 ease-in border border-[#9c702a] hover:bg-btnColor text-secondary hover:text-white rounde-lg focus:outline-none">Voir plus de recettes</button>
             </NavLink>
           </div>
+          <div>
           <NewsLetter />
+          </div>
           <CompanyLogo />
         </div>
         <div className="flex items-center justify-center">

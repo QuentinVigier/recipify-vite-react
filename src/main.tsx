@@ -9,6 +9,7 @@ import Recettes from './pages/Recettes.tsx';
 import RecipeDetails from './pages/RecipeDetails.tsx';
 import Articles from './pages/Articles.tsx';
 import FormRecette from './pages/FormRecette.tsx';
+import Fav from './pages/Fav.tsx';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/contribuer",
     element: <FormRecette />,
+  },
+  {
+    path: "/favoris",
+    element: <Fav />,
   }
 ]);
 
