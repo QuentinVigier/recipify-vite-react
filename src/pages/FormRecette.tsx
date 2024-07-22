@@ -59,7 +59,7 @@ const RecipeForm: React.FC = () => {
     };
 
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
         const { name, value } = e.target;
         setRecipe({
@@ -70,7 +70,7 @@ const RecipeForm: React.FC = () => {
 
     const handleIngredientChange = (
         index: number,
-        e: React.ChangeEvent<HTMLInputElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement >
     ) => {
         const { name, value } = e.target;
         const newIngrédients = [...recipe.ingrédients];
@@ -174,32 +174,42 @@ const RecipeForm: React.FC = () => {
                         </label>
                         <label className="block mb-4">
                             Difficulté :
-                            <input
+                            <select
                                 className="w-full p-2 mt-1 border rounded"
-                                placeholder="Facile - Moyen - Difficile"
-                                type="text"
                                 name="difficulté"
                                 value={recipe.difficulté}
                                 onChange={handleChange}
-                            />
+                            >
+                                <option value="">Sélectionner une difficulté</option>
+                                <option value="Facile">Facile</option>
+                                <option value="Moyen">Moyen</option>
+                                <option value="Difficile">Difficile</option>
+                            </select>
                             {errors.difficulté && (
                                 <span className="text-red-500">{errors.difficulté}</span>
                             )}
                         </label>
                         <label className="block mb-4">
                             Type :
-                            <input
+                            <select
                                 className="w-full p-2 mt-1 border rounded"
-                                placeholder="Entrée, Plat, Dessert, Accompagnement, Boisson"
-                                type="text"
                                 name="type"
                                 value={recipe.type}
                                 onChange={handleChange}
-                            />
+                            >
+                                <option value="">Sélectionner un type</option>
+                                <option value="Entrée">Entrée</option>
+                                <option value="Plat">Plat</option>
+                                <option value="Dessert">Dessert</option>
+                                <option value="Accompagnement">Accompagnement</option>
+                                <option value="Boisson">Boisson</option>
+                            </select>
                             {errors.type && (
                                 <span className="text-red-500">{errors.type}</span>
                             )}
                         </label>
+
+
                         <label className="block mb-4">
                             Pays :
                             <input
@@ -299,7 +309,7 @@ const RecipeForm: React.FC = () => {
                         </button>
                     </div>
                 </form>
-            </div>  
+            </div>
             <Footer />
         </>
     );

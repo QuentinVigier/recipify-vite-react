@@ -29,7 +29,7 @@ const MobileNav = ({ menuItems, onClose, onOpen, hideLeft }: MobileNavProps) => 
                         {
                             menuItems?.map((item: string, index: number) => (
                                 <li key={index}>
-                                    <NavLink to={item} className='font-medium capitalize text-secondary'>{item}</NavLink>
+                                    <NavLink to={`/${item}`} className='font-medium capitalize text-secondary'>{item}</NavLink>
                                 </li>
                             ))}
                     </ul>
