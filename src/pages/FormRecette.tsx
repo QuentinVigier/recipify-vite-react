@@ -38,7 +38,11 @@ const RecipeForm: React.FC = () => {
 
     const validate = (): boolean => {
         const newErrors: { [key: string]: string } = {};
-        if (!recipe.name) newErrors.name = "Le nom est requis.";
+        if (!recipe.name) {
+            newErrors.name = "Le nom est requis.";
+        } else if (recipe.name.length < 3) {
+            newErrors.name = "Le nom doit comporter au moins 3 caractères.";
+        }
         if (!recipe.img) newErrors.img = "L'URL de l'image est requise.";
         if (!recipe.tempsprépa)
             newErrors.tempsprépa = "Le temps de préparation est requis.";
@@ -66,11 +70,32 @@ const RecipeForm: React.FC = () => {
             ...recipe,
             [name]: value,
         });
+
+        // Validate the specific field
+        if (name === "name") {
+            if (!value) {
+                setErrors((prevErrors) => ({
+                    ...prevErrors,
+                    name: "Le nom est requis.",
+                }));
+            } else if (value.length < 3) {
+                setErrors((prevErrors) => ({
+                    ...prevErrors,
+                    name: "Le nom doit comporter au moins 3 caractères.",
+                }));
+            } else {
+                setErrors((prevErrors) => {
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                    const { name, ...rest } = prevErrors;
+                    return rest;
+                });
+            }
+        }
     };
 
     const handleIngredientChange = (
         index: number,
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement >
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         const { name, value } = e.target;
         const newIngrédients = [...recipe.ingrédients];
