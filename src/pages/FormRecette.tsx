@@ -299,7 +299,7 @@ const RecipeForm: React.FC = () => {
                         </button>
                     </div>
                 </form>
-            </div>
+            </div>  
             <Footer />
         </>
     );
